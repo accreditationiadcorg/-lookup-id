@@ -306,11 +306,11 @@
         </table>
 
 
-        <!-- زر الرجوع -->
+        <!-- زر الرجوع (مرتبط بالرابط مع السيريال) -->
         <div class="btn-container">
 
             <a
-                href="https://accreditation.iadc.org/lookup?id"
+                href="https://accreditationiadcorg.github.io/-lookup-iDD/?serial=2F618710-A286E5"
                 class="btn-goback"
             >
                 Go Back
@@ -321,140 +321,22 @@
     </div>
 
 
-    <!-- ========================================= -->
     <!-- منع النسخ والاختصارات -->
-    <!-- ========================================= -->
-
     <script>
-
-        /* ================================
-           منع كليك يمين
-        ================================= */
-        document.addEventListener(
-            'contextmenu',
-            function(e) {
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            const key = e.key.toLowerCase();
+            if (
+                (e.ctrlKey && ['c', 'x', 'a', 'u', 's', 'p'].includes(key)) ||
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key))
+            ) {
                 e.preventDefault();
             }
-        );
-
-
-        /* ================================
-           منع النسخ
-        ================================= */
-        document.addEventListener(
-            'copy',
-            function(e) {
-                e.preventDefault();
-            }
-        );
-
-
-        /* ================================
-           منع القص
-        ================================= */
-        document.addEventListener(
-            'cut',
-            function(e) {
-                e.preventDefault();
-            }
-        );
-
-
-        /* ================================
-           منع السحب
-        ================================= */
-        document.addEventListener(
-            'dragstart',
-            function(e) {
-                e.preventDefault();
-            }
-        );
-
-
-        /* ================================
-           منع اختصارات لوحة المفاتيح
-        ================================= */
-        document.addEventListener(
-            'keydown',
-            function(e) {
-
-                const key = e.key.toLowerCase();
-
-
-                /* Ctrl + C */
-                if (e.ctrlKey && key === 'c') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + X */
-                if (e.ctrlKey && key === 'x') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + A */
-                if (e.ctrlKey && key === 'a') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + U */
-                if (e.ctrlKey && key === 'u') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + S */
-                if (e.ctrlKey && key === 's') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + P */
-                if (e.ctrlKey && key === 'p') {
-                    e.preventDefault();
-                }
-
-
-                /* F12 */
-                if (e.key === 'F12') {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + Shift + I */
-                if (
-                    e.ctrlKey &&
-                    e.shiftKey &&
-                    key === 'i'
-                ) {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + Shift + J */
-                if (
-                    e.ctrlKey &&
-                    e.shiftKey &&
-                    key === 'j'
-                ) {
-                    e.preventDefault();
-                }
-
-
-                /* Ctrl + Shift + C */
-                if (
-                    e.ctrlKey &&
-                    e.shiftKey &&
-                    key === 'c'
-                ) {
-                    e.preventDefault();
-                }
-
-            }
-        );
-
+        });
     </script>
 
 </body>
