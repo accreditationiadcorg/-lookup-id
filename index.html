@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IADC Well Control Accreditation Program</title>
+
+    <style>
+        /* --- استدعاء الخط العادي للصفحة --- */
+        @font-face {
+            font-family: 'MyRoboto';
+            src: url('fonts/RobotoCondensed-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- استدعاء خط Black للزر --- */
+        @font-face {
+            font-family: 'RobotoButtonFont';
+            src: url('fonts/RobotoCondensed-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- الإعدادات الأساسية --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            font-family: 'MyRoboto', 'Roboto Condensed', sans-serif;
+            background-color: #eeeeee;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            min-height: 100vh;
+
+            padding-top: 40px;
+            padding-bottom: 10px;
+
+            /* منع تحديد النص */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* --- البطاقة --- */
+        .card {
+            background-color: #f7f7f7;
+            border-radius: 2px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
+
+            width: 340px;
+
+            padding: 35px 30px 60px 30px;
+        }
+
+        /* --- الشعار --- */
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: 28px;
+        }
+
+        .logo-img {
+            max-width: 155px;
+            max-height: 55px;
+
+            object-fit: contain;
+            display: block;
+
+            /* منع سحب الصورة */
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* --- جدول التفاصيل --- */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+
+            margin-top: 50px;
+            margin-bottom: 22px;
+        }
+
+        .details-table tr {
+            border-bottom: 1px solid #eeeeee;
+
+            transition: background-color 0.15s ease;
+
+            cursor: default;
+        }
+
+        .details-table tr:first-child {
+            border-top: 1px solid #eeeeee;
+        }
+
+        .details-table tr:hover,
+        .details-table tr:active {
+            background-color: #f7f7f7;
+        }
+
+        .details-table td {
+            padding: 11px 4px;
+
+            font-size: 14px;
+            line-height: 1.4;
+
+            vertical-align: top;
+
+            /* منع تحديد النص */
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* --- العمود الأول --- */
+        .label-col {
+            color: #555555;
+
+            width: 35%;
+
+            padding-right: 10px;
+
+            font-weight: bold;
+        }
+
+        /* --- العمود الثاني --- */
+        .value-col {
+            color: #222222;
+
+            width: 65%;
+
+            font-weight: normal;
+        }
+
+        /* --- زر الرجوع --- */
+        .btn-container {
+            width: 100%;
+        }
+
+        .btn-goback {
+            display: block;
+
+            width: 100%;
+
+            background-color: #78001a;
+
+            color: #ffffff;
+
+            border: none;
+            border-radius: 4px;
+
+            padding: 10px 0;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            transition: background-color 0.15s ease;
+
+            /* خط Black */
+            font-family: 'RobotoButtonFont',
+                         'Roboto Condensed',
+                         sans-serif !important;
+
+            font-weight: normal !important;
+
+            letter-spacing: 0.5px;
+
+            /* منع تحديد الزر */
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .btn-goback:hover,
+        .btn-goback:active {
+            background-color: #8c3147;
+        }
+
+        /* منع تحديد أي عنصر */
+        img,
+        table,
+        td,
+        div,
+        span,
+        a,
+        button {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- الشعار -->
+        <div class="logo-wrapper">
+            <img
+                src="logo (2).png"
+                alt="IADC Logo"
+                class="logo-img"
+                draggable="false"
+            >
+        </div>
+
+
+        <!-- تفاصيل الشهادة -->
+        <table class="details-table">
+
+            <tr>
+                <td class="label-col">
+                    Certificate<br>ID:
+                </td>
+
+                <td class="value-col">
+                    2F618710-A286E5
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Name:
+                </td>
+
+                <td class="value-col">
+                    ALMSHAL.JASSAM MOHAMMED
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Completed<br>On:
+                </td>
+
+                <td class="value-col">
+                    29 May 2026
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Expires On:
+                </td>
+
+                <td class="value-col">
+                    29 May 2028
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Program:
+                </td>
+
+                <td class="value-col">
+                    Drilling Operations,<br>
+                    Supervisor, Surface
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Provider:
+                </td>
+
+                <td class="value-col">
+                    Tyba for Training and HSE<br>
+                    Consultancy
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="label-col">
+                    Status:
+                </td>
+
+                <td class="value-col">
+                    Active
+                </td>
+            </tr>
+
+        </table>
+
+
+        <!-- زر الرجوع -->
+        <div class="btn-container">
+
+            <a
+                href="https://accreditation.iadc.org/lookup?id"
+                class="btn-goback"
+            >
+                Go Back
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- منع النسخ والاختصارات -->
+    <!-- ========================================= -->
+
+    <script>
+
+        /* ================================
+           منع كليك يمين
+        ================================= */
+        document.addEventListener(
+            'contextmenu',
+            function(e) {
+                e.preventDefault();
+            }
+        );
+
+
+        /* ================================
+           منع النسخ
+        ================================= */
+        document.addEventListener(
+            'copy',
+            function(e) {
+                e.preventDefault();
+            }
+        );
+
+
+        /* ================================
+           منع القص
+        ================================= */
+        document.addEventListener(
+            'cut',
+            function(e) {
+                e.preventDefault();
+            }
+        );
+
+
+        /* ================================
+           منع السحب
+        ================================= */
+        document.addEventListener(
+            'dragstart',
+            function(e) {
+                e.preventDefault();
+            }
+        );
+
+
+        /* ================================
+           منع اختصارات لوحة المفاتيح
+        ================================= */
+        document.addEventListener(
+            'keydown',
+            function(e) {
+
+                const key = e.key.toLowerCase();
+
+
+                /* Ctrl + C */
+                if (e.ctrlKey && key === 'c') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + X */
+                if (e.ctrlKey && key === 'x') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + A */
+                if (e.ctrlKey && key === 'a') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + U */
+                if (e.ctrlKey && key === 'u') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + S */
+                if (e.ctrlKey && key === 's') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + P */
+                if (e.ctrlKey && key === 'p') {
+                    e.preventDefault();
+                }
+
+
+                /* F12 */
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + Shift + I */
+                if (
+                    e.ctrlKey &&
+                    e.shiftKey &&
+                    key === 'i'
+                ) {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + Shift + J */
+                if (
+                    e.ctrlKey &&
+                    e.shiftKey &&
+                    key === 'j'
+                ) {
+                    e.preventDefault();
+                }
+
+
+                /* Ctrl + Shift + C */
+                if (
+                    e.ctrlKey &&
+                    e.shiftKey &&
+                    key === 'c'
+                ) {
+                    e.preventDefault();
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
